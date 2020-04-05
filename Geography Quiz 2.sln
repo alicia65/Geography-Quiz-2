@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geography Quiz 2", "Geography Quiz 2\Geography Quiz 2.csproj", "{ABC5C100-FD0B-4B29-92D4-FA37F74E29EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABC5C100-FD0B-4B29-92D4-FA37F74E29EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABC5C100-FD0B-4B29-92D4-FA37F74E29EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABC5C100-FD0B-4B29-92D4-FA37F74E29EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABC5C100-FD0B-4B29-92D4-FA37F74E29EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A8A8BD5-0C69-484E-9B91-B07971227420}
+	EndGlobalSection
+EndGlobal
