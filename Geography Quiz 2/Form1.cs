@@ -36,9 +36,23 @@ namespace Geography_Quiz_2
 {
     public partial class Form1 : Form
     {
+        //Generate global variables for the quiz to use in the app
+
+        //Create a SortList with data types as strings for key-value pair.  
+        //Keys are questions.  Values are answers.
+        //Queries is the name of the SortList and contains three elements
+        private SortedList<string, string> queryList = new SortedList<string, string>()
+        { {"What is the state capital of California?","Sacramento" },
+            {"What is the tallest mountain in the world?", "Everest"},
+            {"Which country has the furthest south extent?", "Chile"} };
+       
+        private int queryNumber = -1;
+        private int Score = 0; 
+        
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -48,37 +62,45 @@ namespace Geography_Quiz_2
 
         private void btnCheckAnswer_Click(object sender, EventArgs e)
         {
-            List<string> quizAnswers = new List<string>();
-            
-            string answer = txtAnswer1.Text;
-            if (answer.Contains("Sacramento"))
-            {
-                MessageBox.Show("Correct!", "Result");
-            }
-            else
-            {
-                MessageBox.Show("Incorrect, the answer is Sarcramento", "Result");
-            }
+            ShowMyNextQuestion();
+            CheckKey();
 
-            string answer2 = txtAnswer2.Text;
-            if (answer2.Contains("Everest"))
-            {
-                MessageBox.Show("Correct!", "Result");
-            }
-            else
-            {
-                MessageBox.Show("Incorrect, the answer is Everest", "Result");
-            }
+        }
 
-            string answer3 = txtAnswer3.Text;
-            if (answer3.Contains("Chile")) 
+        private void ShowMyNextQuestion() 
+        {
+            queryNumber++;
+
+            if(queryNumber< queryList.Count) 
             {
-                MessageBox.Show("Correct!", "Result");
+                KeyValuePair<string, string> query = queryList.ElementAt(queryNumber);
+                string queryTxt = query.Key;
+                txtQuestions.Text = queryTxt;
             }
             else 
             {
-                MessageBox.Show("Incorrect, the answer is Chile", "Result");
+                btnCheckAnswer.Enabled = false;
+                btnCheckAnswer.Text = "Quiz over!";
+                MessageBox.Show($"Your score is {Score}", "Quiz Over!");
+            }
+            
+        }
+
+        private void CheckKey() 
+        {
+            if(queryNumber < queryList.Count) 
+            {
+                KeyValuePair<string, string> inquiry = queryList.ElementAt(queryNumber);
+                string correctAnswer = inquiry.Value;
+
+                if(correctAnswer == txtQuestions.ContainsKey(string)) 
+                {
+                    Score++;
+                }
+                lblScore.Text = $"Score: {Score}";
+
             }
         }
+        
     }
  }
