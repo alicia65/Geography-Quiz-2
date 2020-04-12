@@ -32,13 +32,14 @@
             this.txtQuestions = new System.Windows.Forms.TextBox();
             this.lblScore = new System.Windows.Forms.Label();
             this.txtUserAnswer = new System.Windows.Forms.TextBox();
+            this.btnCheat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCheckAnswer
             // 
-            this.btnCheckAnswer.Location = new System.Drawing.Point(150, 158);
+            this.btnCheckAnswer.Location = new System.Drawing.Point(40, 166);
             this.btnCheckAnswer.Name = "btnCheckAnswer";
-            this.btnCheckAnswer.Size = new System.Drawing.Size(132, 23);
+            this.btnCheckAnswer.Size = new System.Drawing.Size(132, 27);
             this.btnCheckAnswer.TabIndex = 2;
             this.btnCheckAnswer.Text = "Check answer";
             this.btnCheckAnswer.UseVisualStyleBackColor = true;
@@ -68,11 +69,22 @@
             this.txtUserAnswer.Size = new System.Drawing.Size(220, 22);
             this.txtUserAnswer.TabIndex = 1;
             // 
+            // btnCheat
+            // 
+            this.btnCheat.Location = new System.Drawing.Point(250, 166);
+            this.btnCheat.Name = "btnCheat";
+            this.btnCheat.Size = new System.Drawing.Size(138, 27);
+            this.btnCheat.TabIndex = 4;
+            this.btnCheat.Text = "Select Cheat";
+            this.btnCheat.UseVisualStyleBackColor = true;
+            this.btnCheat.Click += new System.EventHandler(this.btnCheat_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 291);
+            this.Controls.Add(this.btnCheat);
             this.Controls.Add(this.txtUserAnswer);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.txtQuestions);
@@ -89,6 +101,7 @@
         private System.Windows.Forms.TextBox txtQuestions;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.TextBox txtUserAnswer;
+        private System.Windows.Forms.Button btnCheat;
     }
 }
 

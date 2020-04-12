@@ -27,6 +27,17 @@ Finish the code and testing of your app individually.
 
 Make sure you add comments describing your method and reasoning for how you decide if an answer is correct. 
 How will you balance accepting correct answers, with the chance of permitting wrong answers?
+ 
+Update:
+
+ Cheat function for Geography Quiz 2 App.  Add a Cheat button to the app you built for Week 7. 
+ This button will be shown when the app is asking the user a question. 
+ When the Cheat button is clicked, the app will show the answer to the current question in a new Cheat form.  
+ The Cheat form should have a "Close" button, and an "I'm Lazy" button.  
+ When the close button is clicked, the Cheat form will close.  
+ When the I'm Lazy button is clicked, the correct answer is filled n the Quiz form. 
+ 
+ 
  */
 
 using System;
@@ -124,6 +135,15 @@ namespace Geography_Quiz_2
             }
 
         }
-        
+
+        private void btnCheat_Click(object sender, EventArgs e)
+        {
+            Form cheatForm = new frmCheat();
+            DialogResult selectCheat = cheatForm.ShowDialog();
+            if (selectCheat == DialogResult.OK) 
+            {
+                txtUserAnswer.Text = (string)cheatForm.Tag;
+            } 
+        }
     }
  }
