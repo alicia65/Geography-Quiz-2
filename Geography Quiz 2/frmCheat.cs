@@ -24,6 +24,17 @@ namespace Geography_Quiz_2
 
         private void btnImLazy_Click(object sender, EventArgs e)
         {
+            //display correct answer on the quiz form
+            string answer;
+            if (txtUserAnswer.Select == true) 
+            {
+                MessageBox.Show(answer);
+                
+            }
+        }
+
+        private void frmCheat_Load(object sender, EventArgs e)
+        {
 
         }
     }

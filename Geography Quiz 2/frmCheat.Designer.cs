@@ -61,6 +61,7 @@
             this.Controls.Add(this.btnClose);
             this.Name = "frmCheat";
             this.Text = "frmCheat";
+            this.Load += new System.EventHandler(this.frmCheat_Load);
             this.ResumeLayout(false);
 
         }
