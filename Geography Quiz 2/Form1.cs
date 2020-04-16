@@ -140,8 +140,11 @@ namespace Geography_Quiz_2
 
         private void btnCheat_Click(object sender, EventArgs e)
         {
+            KeyValuePair<string, string> inquiry = queryList.ElementAt(queryNumber);
+            string correctAnswer = inquiry.Value;
+
             frmCheat fmCheat = new frmCheat(); // generate new frmCheat form
-            fmCheat.Tag = lblCheat.Text; // create the tag to present string in lblCheat
+            fmCheat.Tag = correctAnswer; // create the tag to present string in lblCheat
             DialogResult CheatResults = fmCheat.ShowDialog();//print form
 
             if(CheatResults == DialogResult.OK) 
@@ -149,9 +152,9 @@ namespace Geography_Quiz_2
                 if (fmCheat.Tag is string lazy) 
                 {
                     lblCheat.Text = lazy;
+                    txtUserAnswer.Text = lazy;// text box auto fill corrected answer when user selected cheat button is pressed. 
                 }
             }
-
         }
     }
  }

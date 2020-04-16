@@ -12,9 +12,7 @@ namespace Geography_Quiz_2
 {
     public partial class frmCheat : Form
     {
-        string s = "Lazy";
-        string s2 = "I am not lazy";
-
+       
         public frmCheat()
         {
             InitializeComponent();
