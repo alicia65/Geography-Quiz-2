@@ -12,6 +12,9 @@ namespace Geography_Quiz_2
 {
     public partial class frmCheat : Form
     {
+        string s = "Lazy";
+        string s2 = "I am not lazy";
+
         public frmCheat()
         {
             InitializeComponent();
@@ -19,21 +22,24 @@ namespace Geography_Quiz_2
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();//leave cheat form
         }
 
         private void btnImLazy_Click(object sender, EventArgs e)
         {
-            //display correct answer on the quiz form
-            string answer;
-            if (txtUserAnswer.Select == true) 
-            {
-                MessageBox.Show(answer);
-                
-            }
+            Tag = txtCheat.Text;// Provide user with answer
+            
+            DialogResult = DialogResult.OK;
+            Close();
+         
         }
 
         private void frmCheat_Load(object sender, EventArgs e)
+        {
+            txtCheat.Text = Tag.ToString();
+        }
+
+        private void lblCorrectAnswer_Click(object sender, EventArgs e)
         {
 
         }

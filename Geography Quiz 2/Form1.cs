@@ -138,12 +138,18 @@ namespace Geography_Quiz_2
 
         private void btnCheat_Click(object sender, EventArgs e)
         {
-            Form cheatForm = new frmCheat();
-            DialogResult selectCheat = cheatForm.ShowDialog();
-            if (selectCheat == DialogResult.OK) 
+            frmCheat fmCheat = new frmCheat(); // generate new frmCheat form
+            fmCheat.Tag = lblCheat.Text; // create the tag to present string in lblCheat
+            DialogResult CheatResults = fmCheat.ShowDialog();//print form
+
+            if(CheatResults == DialogResult.OK) 
             {
-                txtUserAnswer.Text = (string)cheatForm.Tag;
-            } 
+                if (fmCheat.Tag is string lazy) 
+                {
+                    lblCheat.Text = lazy;
+                }
+            }
+
         }
     }
  }
