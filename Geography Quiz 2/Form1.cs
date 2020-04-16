@@ -70,7 +70,8 @@ namespace Geography_Quiz_2
         public Form1()
         {
             InitializeComponent();
-            
+            ShowMyNextQuestion();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -80,14 +81,15 @@ namespace Geography_Quiz_2
 
         private void btnCheckAnswer_Click(object sender, EventArgs e)
         {
-            ShowMyNextQuestion();//call method to show next question
             CheckKey();//call key to check for correct answer
+            ShowMyNextQuestion();//call method to show next question
+        }  
             
-        }
-
         private void ShowMyNextQuestion() 
         {
             queryNumber++;// declaring variable to move to next question
+
+            txtUserAnswer.Text = ""; // clear previous answer
 
             if(queryNumber< queryList.Count)//checking each question in the SortedList 
             {
